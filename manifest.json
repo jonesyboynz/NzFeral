@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "NzRumour",
+  "version": "1.0",
+  "content_scripts": [
+  	{
+  		"matches": [
+  			"https://www.nzherald.co.nz/*", "http://www.nzherald.co.nz/"],
+  		"runat": "document_end",  
+  		"js": ["unblocker.js"]
+  	}]
+}
