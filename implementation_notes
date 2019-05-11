@@ -1,0 +1,17 @@
+V1.0
+< 11-05-2019
+---
+Content is hidden by the "premium-content" class. Removing this class from the div where it is present will unhide the premium content.
+
+Implemented in 4 lines of JS, without trying to minify it.
+
+V1.1.0
+11-05-2019
+---
+Content is hidden by a different class which seems to have a machine generated name such as "QUnWjUZnTonf".
+In addition, this class is present on most of the child nodes of the article-content div.
+I suspect that this name is dynamic. It could be ip-specific or it could change daily. Or not. Ill check tomorrow and on a different computer when I have a chance.
+Anyway, you can determine which class is blocking the premium content by looking for the most frequent class in article-content's children. (It is present on nearly every node).
+You then remove this class from the nodes that possess it.
+
+Implemnted in 44 loc.

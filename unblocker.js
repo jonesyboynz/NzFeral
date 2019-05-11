@@ -17,7 +17,7 @@ for (let i = 0; i < article.children.length; i++){
 
 /*
 Find the class name which occurs most frequenly.
-This is the ---probbaly--- the class which is blocking the ---premium--- content.
+This is ---probbaly--- the class which is blocking the ---premium--- content.
 If we remove this class from class list of all the children then the premium should be revealed.
 */
 
