@@ -15,3 +15,11 @@ Anyway, you can determine which class is blocking the premium content by looking
 You then remove this class from the nodes that possess it.
 
 Implemnted in 44 loc.
+
+02-06-2019
+---
+Still works lmao.
+
+09-07-2019
+---
+NZH updated their site. Looks like they have some fancy code which detects page mutations and redirects you to a subscription offer page if you are using an unblocker.term

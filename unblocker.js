@@ -1,3 +1,5 @@
+//window.addEventListener("beforeunload", function() { debugger; }, false);
+
 //Start with the article content node.
 var article = document.getElementById("article-content");
 
@@ -38,6 +40,8 @@ if (sortedClassesAndFrequencies.length > 0){
 	for (let i = 0; i < article.children.length; i++){
 		if (article.children[i].classList.contains(premiumClassName)){
 			article.children[i].classList.remove(premiumClassName);
+			article.children[i].style.display = '';
 		}
 	}
 }
+
