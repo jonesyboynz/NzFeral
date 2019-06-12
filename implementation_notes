@@ -23,3 +23,7 @@ Still works lmao.
 09-07-2019
 ---
 NZH updated their site. Looks like they have some fancy code which detects page mutations and redirects you to a subscription offer page if you are using an unblocker.term
+
+12-07-2019
+---
+Spent a few days mucking around with popups and message passing because I wanted to make the extension cooler. Parked that in a branch and went back to working on fixing the extension. Managed to trick the page mutation detection by appending a <p> to the document with all the blocking classes and styles, then removing the blockin classes and styles from all other elements.

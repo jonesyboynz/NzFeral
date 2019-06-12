@@ -36,8 +36,15 @@ if (sortedClassesAndFrequencies.length > 0){
 	*/
 	var premiumClassName = sortedClassesAndFrequencies[sortedClassesAndFrequencies.length - 1][0];
 
+
+	//create a dummy node to trick the mutation detecter.
+	var node = document.createElement("p");
+	node.style.display = 'none';
+	node.classList.add(premiumClassName);
+	article.appendChild(node);
+
 	//Remove the premium content class from all the child elements.
-	for (let i = 0; i < article.children.length; i++){
+	for (let i = 0; i < article.children.length - 1; i++){
 		if (article.children[i].classList.contains(premiumClassName)){
 			article.children[i].classList.remove(premiumClassName);
 			article.children[i].style.display = '';
