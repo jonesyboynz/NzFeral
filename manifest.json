@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "NzFeral",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "content_scripts": [
   	{
   		"matches": [
@@ -9,6 +9,15 @@
   		"runat": "document_end",  
   		"js": [
         "unblocker.js",
-        "unblocker_legacy.js"]
-  	}]
+        "unblocker_legacy.js",
+        "app.js"]
+  	}],
+  "browser_action": {
+    "default_title": "NzFeral",
+    "default_popup": "popup.html"
+    },
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"]
 }
