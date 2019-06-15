@@ -1,23 +1,19 @@
 {
-  "manifest_version": 2,
-  "name": "NzFeral",
-  "version": "1.2.0",
-  "content_scripts": [
-  	{
-  		"matches": [
-  			"https://www.nzherald.co.nz/*", "http://www.nzherald.co.nz/"],
-  		"runat": "document_end",  
-  		"js": [
-        "unblocker.js",
-        "unblocker_legacy.js",
-        "app.js"]
-  	}],
-  "browser_action": {
-    "default_title": "NzFeral",
-    "default_popup": "popup.html"
-    },
-  "permissions": [
-    "tabs",
-    "storage",
-    "activeTab"]
+	"manifest_version": 2,
+	"name": "NzFeral",
+	"version": "1.2.1",
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.nzherald.co.nz/*", "http://www.nzherald.co.nz/"],
+			"runat": "document_end",  
+			"js": [
+			"unblocker.js",
+			"unblocker_legacy.js",
+			"app.js"]
+		}],
+	"permissions": [
+	"tabs",
+	"storage",
+	"activeTab"]
 }

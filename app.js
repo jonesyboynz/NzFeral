@@ -7,7 +7,7 @@ function unblocker(){
 	unblocker_legacy();
 }
 
-chrome.runtime.onMessage.addListener(
+/*chrome.runtime.onMessage.addListener(
 	(request, sender, sendResponse) => {
 		console.log(request.message)
 		if (request.message === "run"){
@@ -20,6 +20,6 @@ chrome.runtime.onMessage.addListener(
 			console.log("OFF")
 		}
 		sendResponse();
-	});
+	});*/
 
-//unblocker();
+unblocker();
