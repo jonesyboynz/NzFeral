@@ -1,7 +1,7 @@
 function Unblocker(){
 	DebugMessage("running");
 	UnblockerMain();
-	unblocker_legacy();
+	UnblockerLegacy();
 }
 
 

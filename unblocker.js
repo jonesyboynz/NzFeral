@@ -1,3 +1,15 @@
+function AddDummyNodes(article, classList, times){
+	for (var i = 0; i < times; i++){
+		var node = document.createElement("p");
+		node.style.display = 'none';
+		classList.forEach(function(className){
+			node.classList.add(className);
+		});
+		article.appendChild(node);	
+	}
+}
+
+
 function UnblockerMain(){
 	//Start with the article content node.
 	var article = document.getElementById("article-content");
@@ -40,12 +52,8 @@ function UnblockerMain(){
 		*/
 		var premiumClassName = sortedClassesAndFrequencies[sortedClassesAndFrequencies.length - 1][0];
 
-		//create a dummy node to trick the mutation detecter.
-		var node = document.createElement("p");
-		node.style.display = 'none';
-		node.classList.add(premiumClassName);
-		node.classList.add("dummy");
-		article.appendChild(node);
+		//create dummy nodes to trick the mutation detecter.
+		AddDummyNodes(article, [premiumClassName, "dummy"], 10);
 
 		var hiddenElements = article.querySelectorAll('.' + premiumClassName, 'style="display:none;"')
 

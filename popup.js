@@ -30,7 +30,7 @@ function SetAutoRunText(value){
 }
 
 
-function initalise(){
+function Initalise(){
 	document.addEventListener('DOMContentLoaded', function () {
 		WithAutoRunValue(function(value){
 			SetAutoRunText(value);
@@ -41,4 +41,4 @@ function initalise(){
 		});
 }
 
-initalise();
+Initalise();
