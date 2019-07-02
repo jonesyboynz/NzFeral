@@ -4,9 +4,9 @@
     <style>   	
     body {
       overflow: hidden;
-      margin: 3px;
-      padding: 3px;
-      background: white;
+      margin: 2px;
+      padding: 2px;
+      background: #222222;
     }
 
     div:first-child {
@@ -16,22 +16,24 @@
     div {
       cursor: pointer;
       text-align: center;
-      padding: 3px 3px;
+      padding: 2px 2px;
       font-family: sans-serif;
       font-size: 1.2em;
       width: 180px;
       margin-top: 3px;
-      background: #ffd0d0;
+      background: #333333;
       border-radius: 6px;
+      color:white;
     }
     div:hover {
-      background: #eec0c0;
+      background: #666666;
     }
     </style>
-    <script src="popup.js"></script><style></style>
+    <script src="app_storage.js"></script>
+    <script src="popup.js"></script>
   </head>
   <body>
-    <div id="pause">Pause</div>
-    <div id="run">Run on this page</div>
+    <div id="autorun_toggle" style="display: none"></div>
+    <div id="run">Run</div>
   </body>
 </html>

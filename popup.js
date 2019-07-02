@@ -1,22 +1,44 @@
-/*global chrome*/
+function ClickToggleAuto(e) {
+	WithAutoRunValue(function(value){
+		SetAutoRunValue(!value);
+		SetAutoRunText(!value);
+	});
+	window.close();
+}
 
-function send(message){
-	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-		chrome.tabs.sendMessage(tabs[0].id, {message: message}, function(response) {});
+
+function ClickRun(e) {
+	SendToContent("run");
+	window.close();
+}
+
+
+function SendToContent(flag, responseMethod){ 
+	chrome.tabs.query({active: true}, function(tabs) {
+		chrome.tabs.sendMessage(tabs[0].id, {message: flag}, responseMethod);
 	});	
 }
 
-function click_toggle_auto(e) {
-	send("run");
-	window.close();
+
+function SetAutoRunText(value){
+	if (value){
+		document.getElementById("autorun_toggle").innerHTML = "Disable autorun";
+	}
+	else{
+		document.getElementById("autorun_toggle").innerHTML = "Enable autorun";
+	}
 }
 
-function click_run(e) {
-	send("auto_off");
-	window.close();
+
+function initalise(){
+	document.addEventListener('DOMContentLoaded', function () {
+		WithAutoRunValue(function(value){
+			SetAutoRunText(value);
+		});
+		document.getElementById("autorun_toggle").style.display = '';
+		document.getElementById("autorun_toggle").addEventListener('click', ClickToggleAuto);
+		document.getElementById("run").addEventListener('click', ClickRun);
+		});
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-	document.getElementById("pause").addEventListener('click', click_toggle_auto);
-	document.getElementById("run").addEventListener('click', click_run);
-	});
+initalise();

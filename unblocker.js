@@ -1,4 +1,4 @@
-function unblocker_main(){
+function UnblockerMain(){
 	//Start with the article content node.
 	var article = document.getElementById("article-content");
 
