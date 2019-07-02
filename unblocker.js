@@ -44,14 +44,18 @@ function UnblockerMain(){
 		var node = document.createElement("p");
 		node.style.display = 'none';
 		node.classList.add(premiumClassName);
+		node.classList.add("dummy");
 		article.appendChild(node);
 
+		var hiddenElements = article.querySelectorAll('.' + premiumClassName, 'style="display:none;"')
+
 		//Remove the premium content class from all the child elements.
-		for (let i = 0; i < article.children.length; i++){
-			if (article.children[i].classList.contains(premiumClassName)){
-				article.children[i].classList.remove(premiumClassName);
-				article.children[i].style.display = '';
+		hiddenElements.forEach(function(element){
+			if (!element.classList.contains("dummy")){
+				element.classList.remove(premiumClassName);
+				element.style.display = '';		
 			}
-		}
+
+		})
 	}
 }
