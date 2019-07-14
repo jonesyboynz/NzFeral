@@ -1,0 +1,14 @@
+class RelatedContentHider extends MutatorBase
+{
+	constructor(document){
+		super(document);
+	}
+
+	Apply(){
+		super.HideElementsWithClass("article-right-rail"); //might also hide some ads but oh well.
+		super.HideElementsWithClass("pb-f-global-recommend");
+		super.HideElementWithId("ciNFtV1uRaANvr"); //"More from new zealand"
+		super.HideElementsWithClass("pb-f-article-related-articles");
+		super.HideElementWithId("cExMor1DPM25pr"); //"Latest premium content"
+	}
+} 

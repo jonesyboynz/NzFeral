@@ -1,39 +1,103 @@
 <html>
   <head>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <title>NzFeral Options</title>
-    <style>   	
-    body {
-      overflow: hidden;
-      margin: 2px;
-      padding: 2px;
-      background: #222222;
-    }
-
-    div:first-child {
-      margin-top: 0px;
-    }
-
-    div {
-      cursor: pointer;
-      text-align: center;
-      padding: 2px 2px;
-      font-family: sans-serif;
-      font-size: 1.2em;
-      width: 180px;
-      margin-top: 3px;
-      background: #333333;
-      border-radius: 6px;
-      color:white;
-    }
-    div:hover {
-      background: #666666;
-    }
-    </style>
-    <script src="app_storage.js"></script>
-    <script src="popup.js"></script>
+    <script src="Debug.js"></script>
+    <script src="Settings.js"></script>
+    <script src="AppStorage.js"></script>
+    <script src="App_Popup.js"></script>
   </head>
   <body>
-    <div id="autorun_toggle" style="display: none"></div>
-    <div id="run">Run</div>
+    <table>
+
+
+
+      <tr>
+        <td colspan="2">
+          <p class="title-label">NzFeral &#128526;</p>
+          <hr>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p class="slider-label color-gold-metal">Unlock Articles</p>
+        </td>
+        <td>
+          <label class="switch">
+            <input id="unlock_premium" type="checkbox">
+            <span class="slider round"></span>
+          </label>          
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p class="slider-label">Hide Related Media</p>
+        </td>
+        <td>
+          <label class="switch">
+            <input id="hide_related" type="checkbox">
+            <span class="slider round"></span>
+          </label>          
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p class="slider-label">Hide Offers</p>
+        </td>
+        <td>
+          <label class="switch">
+            <input id="hide_offers" type="checkbox">
+            <span class="slider round"></span>
+          </label>          
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p class="slider-label">Hide Ads</p>
+        </td>
+        <td>
+          <label class="switch">
+            <input id="hide_ads" type="checkbox">
+            <span class="slider round"></span>
+          </label>          
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>
+          <p class="slider-label">Hide Social Media</p>
+        </td>
+        <td>
+          <label class="switch">
+            <input id="hide_social_media" type="checkbox">
+            <span class="slider round"></span>
+          </label>          
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <p class="slider-label color-blue-metal">Run Automatically</p>
+        </td>
+        <td>
+          <label class="switch">
+            <input id="autorun" type="checkbox">
+            <span class="slider round"></span>
+          </label>          
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <div class="click-button button-row" id="run">Run</div>
+        </td>
+      </tr>
+
+    </table>
   </body>
 </html>

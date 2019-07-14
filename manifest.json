@@ -1,18 +1,24 @@
 {
 	"manifest_version": 2,
 	"name": "NzFeral",
-	"version": "1.3.1",
+	"version": "2.0.0",
 	"content_scripts": [
 		{
 			"matches": [
 				"https://www.nzherald.co.nz/*", "http://www.nzherald.co.nz/"],
 			"runat": "document_end",  
 			"js": [
-				"debugging.js",
-				"app_storage.js",
-				"unblocker.js",
-				"unblocker_legacy.js",
-				"app.js"
+				"Debugging.js",
+				"Settings.js",
+				"AppStorage.js",
+				"MutatorBase.js",
+				"Unblocker.js",
+				"UnblockerLegacy.js",
+				"SocialMediaHider.js",
+				"OffersHider.js",
+				"AdHider.js",
+				"RelatedContentHider.js",
+				"App_Main.js"
 			]
 		}
 	],

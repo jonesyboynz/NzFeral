@@ -35,3 +35,18 @@ Finally finished the UI work. There is now an autorun variable which can be togg
 3-07-2019
 ---
 Fixed the issue with the blocker being detected. Just needed to add 10 dummy nodes rather than 1 lol.
+
+V2.0.0
+13-07-2019
+---
+Content-reduction functionality has been added to NzFeral:
+ * Social media removal
+ * Ad removal
+ * Offers removal
+ * related content removal
+These can each be toggled (as well as the content unlocker and autorun options).
+
+UI was also overhauled to enable these features.
+
+Attempted to use a more OOP approach, however the asyn nature of chrome messaging and storage access killed this and I have ended up with a bunch of static classes.
+I think it is still an improvement.
