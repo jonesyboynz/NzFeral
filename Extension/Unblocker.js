@@ -15,20 +15,22 @@ class Unblocker extends MutatorBase
 			return;
 		}
 
-		//Add dummy nodes to trick the mutuation detector.
-		this.AddDummyNodes([premiumClassName, "dummy"], 10);
+		//Clone article
+		var cloneArticle = this.Article().cloneNode(true);
 
-		var hiddenElements = this.Article().querySelectorAll('.' + premiumClassName, 'style="display:none;"')
+		var hiddenElements = cloneArticle.querySelectorAll('.' + premiumClassName, 'style="display:none;"');
 
 		//Remove the premium content class from all the child elements.
 		hiddenElements.forEach(function(element){
-			if (!element.classList.contains("dummy")){
 				element.classList.remove(premiumClassName);
-				element.style.display = "";		
-			}
+				element.style.display = "";
+			});
 
-		})
+		//Append the cloned article
+		this.Article().parentNode.appendChild(cloneArticle);
 
+		//Hide the original article
+		this.Article().style.display = "none";
 	}
 
 	FindPremiumContentClassName(){
@@ -57,18 +59,5 @@ class Unblocker extends MutatorBase
 		}
 
 		return sortedClassesAndFrequencies[sortedClassesAndFrequencies.length - 1][0];
-	}
-
-	AddDummyNodes(classList, times){
-		var fragment = this.document.createDocumentFragment();
-		for (var i = 0; i < times; i++){
-			var node = this.document.createElement("p");
-			node.style.display = 'none';
-			classList.forEach(function(className){
-				node.classList.add(className);
-			});
-			fragment.appendChild(node);	
-		}
-		this.Article().appendChild(fragment);
 	}
 }

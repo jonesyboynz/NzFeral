@@ -8,7 +8,7 @@ class AppStorage
 		AppStorage.AwaitingCallback.methods.push(callback);
 		chrome.storage.local.get("NZ_FERAL_AUTORUN", function(result){
 			var settings = result["NZ_FERAL_AUTORUN"];
-			if (settings === undefined){
+			if (settings === undefined || settings.Version !== Version.Number){
 				settings = new Settings();
 				AppStorage.Save(settings);
 			}
@@ -25,10 +25,9 @@ class AppStorage
 			Debug.Message("Settings"
 				+ "\nAutorun: " + settings.Autorun
 				+ "\nUnlockPremium: " + settings.UnlockPremium
-				+ "\nHideOffers: " + settings.HideOffers
-				+ "\nHideFx: " + settings.HideFx
 				+ "\nHideAds: " + settings.HideAds
-				+ "\nHideSocialMedia: " + settings.HideSocalMedia);
+				+ "\nHideSocialMedia: " + settings.HideSocalMedia
+				+ "\nVersion: " + settings.Version);
 		});
 	}
 

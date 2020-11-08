@@ -3,10 +3,10 @@ class PopupEventHandlers{
 		PopupEventHandlers.SendToContent("run");
 	}
 
-	static SendToContent(flag, responseMethod){ 
+	static SendToContent(flag, responseMethod){
 		chrome.tabs.query({active: true}, function(tabs) {
-			chrome.tabs.sendMessage(tabs[0].id, {message: flag}, responseMethod);
-		});	
+				tabs.forEach(tab => chrome.tabs.sendMessage(tab.id, {message: flag}, responseMethod));
+		});
 	}
 
 	static ClickToggle(e){
@@ -41,7 +41,6 @@ class PopupController {
 	static ElementSettingMappings = {
 			"unlock_premium": "UnlockPremium",
 			"hide_related": "HideRelated",
-			"hide_offers": "HideOffers",
 			"hide_social_media": "HideSocalMedia",
 			"hide_ads": "HideAds",
 			"autorun": "Autorun"
@@ -51,6 +50,6 @@ class PopupController {
 }
 
 
-document.addEventListener('DOMContentLoaded', function(){ 
+document.addEventListener('DOMContentLoaded', function(){
     PopupController.Initalise();
 }, false);

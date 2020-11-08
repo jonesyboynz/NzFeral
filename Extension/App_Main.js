@@ -11,10 +11,6 @@ class AppController {
 		var mutators = [];
 		if (settings.UnlockPremium){
 			mutators.push(new Unblocker(document));
-			mutators.push(new UnblockerLegacy(document));
-		}
-		if (settings.HideOffers){
-			mutators.push(new OffersHider(document));
 		}
 		if (settings.HideRelated){
 			mutators.push(new RelatedContentHider(document));
@@ -43,7 +39,7 @@ class AppController {
 	static Run(){
 		AppStorage.WithSettings(function(settings){
 			AppController.Apply(settings);
-		});	
+		});
 	}
 
 	static Initalise(){
@@ -56,13 +52,10 @@ class AppController {
 
 		AppStorage.WithSettings(function(settings){
 			if (settings.Autorun){
-				AppController.Run();
-				setTimeout(AppController.Run, 3000);
+				setTimeout(AppController.Run, 1000);
 			}
-		});	
+		});
 	}
-
 }
-
 
 AppController.Initalise();

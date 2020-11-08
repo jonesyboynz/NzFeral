@@ -6,16 +6,15 @@
 		{
 			"matches": [
 				"https://www.nzherald.co.nz/*", "http://www.nzherald.co.nz/"],
-			"runat": "document_end",  
+			"runat": "document_end",
 			"js": [
 				"Debugging.js",
+				"Version.js",
 				"Settings.js",
 				"AppStorage.js",
 				"MutatorBase.js",
 				"Unblocker.js",
-				"UnblockerLegacy.js",
 				"SocialMediaHider.js",
-				"OffersHider.js",
 				"AdHider.js",
 				"RelatedContentHider.js",
 				"App_Main.js"

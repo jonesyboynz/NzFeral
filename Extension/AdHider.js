@@ -11,5 +11,9 @@ class AdHider extends MutatorBase
 		super.HideElementWithId("barfoot-arc-carousel");
 		super.HideElementsWithClass("marketing---text-below");
 		super.HideElementsWithClass("pb-f-ads-ad");
+		super.HideElementsWithClass("recommended-articles__heading");
+		super.HideElementsWithClass("article-offer");
+		super.HideHrefWhereLinkStartsWith("a", "https://www.nzherald.co.nz/my-account")
+		super.HideElementWithId("iframe_oneroof_commercial_carousel");
 	}
-} 
+}
